@@ -2,17 +2,19 @@ Database of:
 * Creature
 	- CreatureName
 	- HP
-	- BAB
+	- Melee
+	- MeleeDMG
+ 	- Ranged 
+	- RangedDMG
 	- AC
-	- Alignment
 	- Size
 	
-*Type
-	-TypeName
- 	-Vision
-  	-Immunity
+* Type
+	- TypeName
+ 	- Vision
+  	- Alignment
 
-*Ability
+* Ability
 	- AbilityName
 	- ShortDesc
 	- AbilityType (Automatic, Reactive, Special, etc)
