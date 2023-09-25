@@ -11,9 +11,9 @@ Database of:
 	
 * Type
 	- TypeName
- 	- Vision
-  	- Alignment
-
+	- Alignment
+ 	- Immunity
+  	
 * Ability
 	- AbilityName
 	- ShortDesc
