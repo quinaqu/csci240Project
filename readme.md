@@ -1,31 +1,35 @@
 Database of:
 * Creature
-	- CreatureName
+	- CreatureName (PK)
 	- HP
-	- Melee
-	- MeleeDMG
- 	- Ranged 
-	- RangedDMG
+	- MeleeDmg
+	- RangedDmg
 	- AC
 	- Size
-	
+
+* CreatureInstance
+	- InstanceID (PK)
+ 	- CurrentHP
+  	- MaxHP
+   	- Alignment
+   	- Creature (FK)
+
 * Type
-	- TypeName
-	- Alignment
- 	- Immunity
-  	
+	- TypeName (PK)
+
+* Type.Immunity
+  	- ImmunityID (PK)
+  	- TypeName (FK)
+  	- Immunity
 * Ability
-	- AbilityName
-	- ShortDesc
-	- AbilityType (Automatic, Reactive, Special, etc)
-* Item
-	- ItemName
-	- Value
-	- Subtype
-	  - Weapon
-	    - DMG
-	    - Reach
-       - Armor
-         - Light/Med/Heavy
-         - AC Bonus  
-	
+	- AbilityName (PK)
+	- AbilityType
+
+* Ability.Effect
+  	- EffectID (PK)
+  	- AbilityName (FK)
+  	- Effect
+  
+* CreatureAbility
+  	- CreatureName (CPK)
+  	- AbilityName (CPK)
