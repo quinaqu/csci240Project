@@ -1,0 +1,14 @@
+Order for 'source xyz':
+1. project_schema2.sql
+2. project_data.sql
+3. project_fk.sql
+
+project_fk.sql exists because otherwise mysql gets mad about foreign keys (relatable)
+
+
+Errors like this appear when using files:
+
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`PFMonsters`.`#sql-2cf_9`, CONSTRAINT `fk_typename` FOREIGN KEY (`TypeName`) REFERENCES `CreatureType` (`TypeName`))
+mysql> select * from Creature;
+
+I think this is because not all the (potential) foreign keys from the referenced table get used as the tables themselves seem fine.
