@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}POST form{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h1>Enter some data</h1>
+<form action="/submitdpost.html" method="POST">
+  Creature Name: <input type="text" name="cname"><br />
+  Armor Class: <input type="text" name="aclass"><br />
+  Size: <input type="text" name="csize"><br />
+  <input type="submit" name="Submit">
+</form>
+{% endblock %}

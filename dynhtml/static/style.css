@@ -1,0 +1,53 @@
+head, body {
+    background-color: #21202f;
+
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+thead {
+    background-color: darkslategray;
+    color: white;
+    font-weight: 600;
+}
+
+table {
+    background-color: grey;
+    padding: 5px;
+    border: 1.5px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: cadetblue;
+    color: darkslategray;
+}
+
+label {
+
+    text-align: right;
+    margin: 10px;
+}
+
+input[type=text] {
+    border: 2px solid #21202f;
+    border-radius: 4px;
+    background-color: dimgrey;
+}
+
+input[type=text]:hover {
+    width: 30%;
+    opacity: 100%;
+    transition: opacity 1s;
+    border: 2px solid paleturquoise;
+}
+
+p {
+    text-align: center;
+    color: black;
+    margin-left: 30px;
+}

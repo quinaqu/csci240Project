@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  Results Table
+{% endblock %}
+
+{% block content %}
+
+    <table>
+    <thead>
+        <tr>
+            <th>CreatureName</th>
+            <th>AC</th>
+            <th>Size</th>
+        </tr>
+    </thead>
+        <tr>
+            <td>Goblin</td>
+
+            <td>16</td>
+            <td>Small</td>
+        </tr>
+        <tr>
+            <td>Golem, Ice</td>
+
+            <td>17</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>Nymph</td>
+
+            <td>23</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>{{creaturename}}</td>
+            <td>{{armorclass}}</td>
+            <td>{{size}}</td>
+        </tr>
+    </table>
+{% endblock %}
