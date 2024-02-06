@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  Updating Creature
+{% endblock %}
+
+{% block content %}
+<ul>
+  <li><a href="/">Return to creature list</a></li>
+</ul>
+<h3>Editing: {{creaturename}}</h3>
+<h4>Current Values:</h4>
+<table>
+  <tr>
+    <th>Creature Name</th>
+    <th>HP</th>
+    <th>MeleeDmg</th>
+    <th>RangeDmg</th>
+    <th>AC</th>
+    <th>SizeType</th>
+    <th>PrimaryType</th>
+  </tr>
+{% for row in collection %}
+  <tr>
+    <td>
+        {{row['CreatureName']}}
+      </td>
+      <td>
+        {{row['HP']}}
+      </td>
+      <td>
+        {{row['MeleeDmg']}}
+      </td>
+      <td>
+        {{row['RangeDmg']}}
+      </td>
+      <td>
+        {{row['AC']}}
+      </td>
+      <td>
+        {{row['SizeType']}}
+      </td>
+      <td>
+        {{row['PrimaryType']}}
+      </td>
+
+  </tr>
+  {% endfor %}
+</table>
+<div class="other">
+<form action="">
+  <input type="hidden" name="CreatureName" value="{{creaturename}}"><br />
+  HP: <input type="text" name="HP"><br />
+  MeleeDmg: <input type="text" name="MeleeDmg"><br />
+  RangeDmg: <input type="text" name="RangeDmg"><br />
+  AC: <input type="number" name="AC"><br />
+  <label for="SizeType">Size:</label><br />
+    <br><select name="SizeType" id="SizeType">
+      <option value="Tiny">Tiny</option>
+      <option value ="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="Huge">Huge</option>
+    </select><br/>
+  <br>PrimaryType: <input type="text" name="PrimaryType"><br />
+  <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

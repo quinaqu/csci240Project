@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block header %}
+Effects of '{{titlename['AbilityName']}}'
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <tr>
+    <th>Ability Name</th>
+    <th>Ability Type</th>
+  </tr>
+{%if alleffects |count >0 %}
+    {% for row in alleffects %}
+    <tr>
+        <td>
+            {{row['AbilityName']}}
+        </td>
+        <td>
+            {{row['Effect']}}
+        </td>
+        <td>
+        <a href="?delete=true&Effect={{row['Effect']}}">Delete</a>
+
+        </td>
+        </td>
+    </tr>
+    {% endfor %}
+{%else%}
+    <tr>
+        <td>This ability has no effects yet</td>
+    </tr>
+{% endif %}
+<ul>
+<li><a href="/">All Creatures</a></li>
+<li><a href="/ability">All Abilities</a></li>
+</ul>
+
+<div class="right3">
+<h2>Enter a new effect:</h2>
+<form action="">
+<input type="text" name="AbilityName" value="{{titlename['AbilityName']}}">
+<input type="text" name="Effect" id="Effect" required>
+<input type="submit" value="Submit">
+</form>
+</div>
+<p class="warn">*If an effect errors on delete try reloading the page. It works but it hates it. <br>(ノಠ益ಠ)ノ*</p>
+{% endblock %}

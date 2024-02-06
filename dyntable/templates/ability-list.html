@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  Abilities
+{% endblock %}
+
+{% block content %}
+
+<table class="tablebody">
+  <tr>
+    <th>Ability Name</th>
+    <th>Ability Type</th>
+  </tr>
+  {% for row in allabilities %}
+  <tr>
+    <td>
+        {{row['AbilityName']}}
+      </td>
+      <td>
+        {{row['AbilityType']}}
+      </td>
+      <td>
+      <a href="/abilityresults?AbilityName={{row['AbilityName']}}">Show Creatures</a><br />
+      <a href="/effects?AbilityName={{row['AbilityName']}}">Show Effects</a><br />
+      <a href="?delete=true&AbilityName={{row['AbilityName']}}">Delete</a>
+
+      </td>
+    </td>
+  </tr>
+  {% endfor %}
+<ul>
+<li><a href="/">Return to Creatures</a></li>
+</ul>
+<div class="right2">
+<h2>Enter a new ability:</h2>
+<form action="">
+  Ability Name: <input type="text" name="AbilityName" required><br />
+  <label for="AbilityType">Ability Type</label>
+    <select name="AbilityType" id="AbilityType">
+      <option value="Ex">Extraordinary</option>
+      <option value ="Sp">Spell-like</option>
+      <option value="Su">Supernatural</option>
+    </select><br/>
+  <input type="submit" value="Submit">
+</form>
+</div>
+
+{% endblock %}

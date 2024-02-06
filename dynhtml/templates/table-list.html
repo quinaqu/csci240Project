@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  Example Table
+  Creature table
 {% endblock %}
 
 {% block content %}
@@ -10,13 +10,25 @@
   {% for row in collection %}
   <tr>
     <td>
-      {{row['cname']}}
+      {{row['CreatureName']}}
     </td>
     <td>
-      {{row['aclass']}}
+      {{row['HP']}}
     </td>
     <td>
-      {{row['csize']}}
+      {{row['MeleeDmg']}}
+    </td>
+    <td>
+      {{row['RangeDmg']}}
+    </td>
+    <td>
+      {{row['AC']}}
+    </td>
+    <td>
+      {{row['SizeType']}}
+    </td>
+    <td>
+      {{row['PrimaryType']}}
     </td>
   </tr>
   {% endfor %}

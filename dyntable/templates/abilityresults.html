@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    Creatures with '{{abilityresult[0]['AbilityName']}}' and effects
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <tr>
+    <th>Creature Name</th>
+    <th>Ability Name</th>
+    <th>Effect</th>
+  </tr>
+  {% for row in abilityresult %}
+  <tr>
+      <td>
+        {{row['CreatureName']}}
+      </td>
+      <td>
+        {{row['AbilityName']}}
+      </td>
+      <td>
+        {{row['Effect']}}
+      </td>
+      
+    </td>
+  </tr>
+  {% endfor %}
+  <ul>
+    <li><a href="/">Return to Creatures</a></li>
+  </ul>
+{% endblock %}

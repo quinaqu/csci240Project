@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    Abilities of '{{creatureresult[0]['CreatureName']}}' and effects
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <tr>
+
+    <th>Ability Name</th>
+    <th>Effect</th>
+  </tr>
+{% for row in creatureresult %}
+  <tr>
+
+      <td>
+        {{row['AbilityName']}}
+      </td>
+      <td>
+        {{row['Effect']}}
+      </td>
+      <td><a href="?delete=true&CreatureName={{row['CreatureName']}}&AbilityName={{row['AbilityName']}}">Delete</a><br /></td>
+    </td>
+  </tr>
+  {% endfor %}
+<br>
+<ul>
+<li><a href="/">Return to Creatures</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  Pathfinder Creatures
+{% endblock %}
+
+{% block content %}
+<div class="tablebody">
+<table>
+  <tr>
+    <th>Creature Name</th>
+    <th>HP</th>
+    <th>MeleeDmg</th>
+    <th>RangeDmg</th>
+    <th>AC</th>
+    <th>SizeType</th>
+    <th>PrimaryType</th>
+  </tr>
+  {% for row in allcreatures %}
+  <tr>
+    <td>
+        {{row['CreatureName']}}
+      </td>
+      <td>
+        {{row['HP']}}
+      </td>
+      <td>
+        {{row['MeleeDmg']}}
+      </td>
+      <td>
+        {{row['RangeDmg']}}
+      </td>
+      <td>
+        {{row['AC']}}
+      </td>
+      <td>
+        {{row['SizeType']}}
+      </td>
+      <td>
+        {{row['PrimaryType']}}
+      </td>
+    <td>
+      <a href="?delete=true&CreatureName={{row['CreatureName']}}">Delete</a><br />
+      <a href="/updateCreature?CreatureName={{row['CreatureName']}}">Change</a><br />
+      <a href="/creature-abilities?CreatureName={{row['CreatureName']}}">Abilities</a>
+
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+
+  <ul>
+    <li><a href="/ability">Show All Abilites</a></li>
+    <li><a href="/editability">Assign Abilities</a></li>
+  </ul>
+
+
+<div class="right2">
+<h3>Enter a new creature here</h3>
+<form action="">
+  CreatureName: <input type="text" name="CreatureName" required><br />
+  HP: <input type="text" name="HP" required><br />
+  MeleeDmg: <input type="text" name="MeleeDmg"><br />
+  RangeDmg: <input type="text" name="RangeDmg"><br />
+  AC: <input type="number" name="AC" required><br />
+  <label for="SizeType">Size:</label>
+    <select name="SizeType" id="SizeType">
+      <option value="Tiny">Tiny</option>
+      <option value ="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="Huge">Huge</option>
+    </select><br/>
+  PrimaryType: <input type="text" name="PrimaryType"><br />
+  <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

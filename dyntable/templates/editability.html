@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  Assign abilities
+{% endblock %}
+
+{% block content %}
+
+
+
+<!---
+<div>
+
+  <table>
+    <tr>
+      <th>Available Abilites</th>
+    </tr>
+{% for item in collection %}
+    <tr>
+      <td>{{ item["AbilityName"] }}</td>
+      <td><a href="?add=true&AbilityName={{item['AbilityName']}}">Add</a></td>
+    </tr>
+
+{% endfor %}
+</table>
+--->
+<ul>
+<li><a href="/">Return to list</a></li>
+</ul>
+<br>
+<div class="left">
+<form action="">
+<label for="CreatureName">Select a Creature:</label>
+  <select name="CreatureName" id="CreatureName">
+    {% for creature in creatures %}
+    <option value="{{ creature['CreatureName']}}">{{ creature['CreatureName']}}</option>
+    {% endfor %}
+  </select>
+<label for="AbilityName">Select an Ability:</label>
+  <select name="AbilityName" id="AbilityName">
+    {% for ability in collection %}
+    <option value="{{ ability['AbilityName']}}">{{ ability['AbilityName']}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}
